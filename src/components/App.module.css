@@ -1,0 +1,69 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 24px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #2f80ed;
+    overflow: auto;
+
+
+
+}
+
+.container {
+
+    width: 700px;
+    padding: 40px 20px;
+    border-radius: 8px;
+    background-color: #8ec7f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: #7cb2f9 0px 0px 4px, #8fcbff 0px 0px 0px, rgba(0, 0, 0, 0.4) 5px 6px 16px, rgba(0, 0, 0, .05) 6px 16px 13px, rgba(44, 114, 242, 0.4) 0px 14px 14px;
+    overflow: auto;
+
+}
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.phonebook-title {
+    text-shadow: 2px 2px 2px cornflowerblue;
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+.contacts-title {
+    text-shadow: 2px 2px 2px cornflowerblue;
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
