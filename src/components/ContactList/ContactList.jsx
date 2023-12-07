@@ -17,7 +17,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
           </tr>
         </thead>
         <tbody className={styles.contactTableBody}>
-          {contacts.map(contact => (
+          {contacts && Array.isArray(contacts) && contacts.map(contact => (
             <tr key={contact.id}>
               <td>{contact.name} :</td>
               <td>{contact.number}</td>
