@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Filter.module.css';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { updateFilter } from 'store/contactsSlice';
+import { getFilter } from 'store/selectors';
 
-const Filter = ({ filter, onFilterChange }) => (
-  <div className={styles['filterWrapper']}>
+const Filter = () => {
+  const filter = useSelector(getFilter);
+  const dispatch = useDispatch();
+  const onFilterChange = e => {
+    dispatch(updateFilter(e.target.value));
+  }
+  return (<div className={styles['filterWrapper']}>
     <input
       className={styles['filterInput']}
       type="text"
@@ -12,7 +21,7 @@ const Filter = ({ filter, onFilterChange }) => (
       onChange={onFilterChange}
     />
   </div>
-);
+)};
 
 Filter.propTypes = {
   filter: PropTypes.string.isRequired,

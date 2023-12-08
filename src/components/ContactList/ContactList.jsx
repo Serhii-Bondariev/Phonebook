@@ -1,7 +1,15 @@
 import React from 'react';
 import styles from './ContactList.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteContact } from 'store/contactsSlice';
+import { getContacts } from 'store/selectors';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+const ContactList = () => {
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+  const onDeleteContact = id => {
+    dispatch(deleteContact(id));
+  }
   if (contacts.length === 0) {
     return <p>No contacts found</p>;
   }

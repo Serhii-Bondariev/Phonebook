@@ -2,6 +2,14 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './ContactForm.module.css';
+import { addContact } from 'store/contactsSlice';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
+import { getContacts } from 'store/selectors';
+
+
+
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -18,9 +26,16 @@ const validationSchema = Yup.object().shape({
     .required('Phone number is required'),
 });
 
-const ContactForm = ({ onAddContact }) => {
+const ContactForm = () => {
+  const dispatch = useDispatch(); 
+  const contacts = useSelector(getContacts);
+  console.log(contacts);
   const handleSubmit = (values, { resetForm }) => {
-    onAddContact(values.name, values.number);
+    if (contacts.find(contact => contact.name === values.name)) {
+      return alert(`${values.name} is already in contacts`);
+    }
+    dispatch(addContact({ id: uuidv4(), name: values.name, number: values.number }));
+   
     resetForm();
   };
 
