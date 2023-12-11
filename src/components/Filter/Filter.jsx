@@ -16,7 +16,7 @@ const Filter = () => {
     <input
       className={styles['filterInput']}
       type="text"
-      placeholder="Пошук контактів"
+      placeholder="Find contacts by name"
       value={filter}
       onChange={onFilterChange}
     />
