@@ -15,7 +15,7 @@ const App = () => {
           <ContactForm />
           <h2 className={styles.contactsTitle}>Contacts</h2>
           <Filter />
-          <ContactList />
+          <ContactList className={styles.contactList} />
         </div>
       </div>
     </div>
